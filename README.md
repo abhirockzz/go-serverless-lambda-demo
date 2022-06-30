@@ -64,16 +64,16 @@ cdk deploy
 
 ### Resources
 
-Go packages used:
+**Go packages used:**
 
 - `events` - https://pkg.go.dev/github.com/aws/aws-lambda-go/events
 - `lambda` - https://pkg.go.dev/github.com/aws/aws-lambda-go/lambda
-- `API Gateway `[request](https://pkg.go.dev/github.com/aws/aws-lambda-go/events#APIGatewayV2HTTPRequest) and [response](https://pkg.go.dev/github.com/aws/aws-lambda-go/events#APIGatewayV2HTTPResponse) 
+- `API Gateway`[request](https://pkg.go.dev/github.com/aws/aws-lambda-go/events#APIGatewayV2HTTPRequest) and [response](https://pkg.go.dev/github.com/aws/aws-lambda-go/events#APIGatewayV2HTTPResponse) 
 - DynamoDB [PutItem](https://pkg.go.dev/github.com/aws/aws-sdk-go/service/dynamodb?utm_source=gopls#DynamoDB.PutItem) API call 
 - [Amazon DynamoDB Construct Library](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdk/v2/awsdynamodb)
-- Current [AWS Lambda Construct Library](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdk/v2/awslambda)
+- [AWS Lambda Construct Library](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdk/v2/awslambda)
 
-Others:
+**Others:**
 
 - Lambda Handler signatures - https://docs.aws.amazon.com/lambda/latest/dg/golang-handler.html
 - Lambda error handling - https://docs.aws.amazon.com/lambda/latest/dg/golang-exceptions.html#go-exceptions-how
