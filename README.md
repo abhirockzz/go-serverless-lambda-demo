@@ -16,7 +16,7 @@ Build and package:
 cd part1
 
 # build
-GOOS=linux go build -o hello
+GOOS=linux go build -o hello .
 
 # package
 zip func.zip hello
@@ -24,8 +24,7 @@ zip func.zip hello
 
 - Navigate to AWS console > Lambda
 - Create new Lambda function (Go 1.x runtime), upload the zip file
-- Test using the console (use `AWS API Gateway Proxy` as the payload type).
-
+- Test using the console (use `AWS API Gateway Proxy` as the payload type and set `isBase64Encoded` attribute to `false`).
 
 **Part 2 - Persist data to DynamoDB**
 
@@ -33,7 +32,7 @@ zip func.zip hello
 cd part2
 
 # build
-GOOS=linux go build -o hello
+GOOS=linux go build -o hello .
 
 # package
 zip func.zip hello
@@ -44,7 +43,7 @@ zip func.zip hello
 - Create DynamoDB table - use `email` as the Partition key (data type `String`)
 - Add an environment variable to the Lambda function with name `TABLE_NAME` and value as the name of the DynamoDB table you created
 - Update the Lambda Function IAM role to provide DynamoDB `PutItem` permission for the DynamoDB table you created
-- Test using the console (use `AWS API Gateway Proxy` as the payload type) e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
+- - Test using the console (use `AWS API Gateway Proxy` as the payload type and set `isBase64Encoded` attribute to `false`). Use a JSON payload e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
 - Confirm that the user entry was added to DynamoDB table
 
 **Part 3 - Infra-as-code with AWS CDK**
@@ -60,7 +59,7 @@ cdk deploy
 ```
 
 - Navigate to AWS console > CloudFormation and confirm that the stack was successfully created and all resources were provisioned (Lambda Function, DynamoDB table, IAM role and permission)
-- Test using the console (use `AWS API Gateway Proxy` as the payload type) e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
+- - Test using the console (use `AWS API Gateway Proxy` as the payload type and set `isBase64Encoded` attribute to `false`). Use a JSON payload e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
 - Confirm that the user entry was added to the *new* DynamoDB table
 
 ### Resources
