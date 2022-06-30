@@ -59,7 +59,7 @@ cdk deploy
 ```
 
 - Navigate to AWS console > CloudFormation and confirm that the stack was successfully created and all resources were provisioned (Lambda Function, DynamoDB table, IAM role and permission)
-- - Test using the console (use `AWS API Gateway Proxy` as the payload type and set `isBase64Encoded` attribute to `false`). Use a JSON payload e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
+- Test using the console (use `AWS API Gateway Proxy` as the payload type and set `isBase64Encoded` attribute to `false`). Use a JSON payload e.g. `{\"email\":\"user1@foo.com\",\"name\":\"user1\"}`
 - Confirm that the user entry was added to the *new* DynamoDB table
 
 ### Resources
@@ -84,6 +84,6 @@ Others:
   - General https://docs.aws.amazon.com/cdk/v2/guide/home.html
   - CDK Go https://docs.aws.amazon.com/cdk/v2/guide/work-with-cdk-go.html
 - Amazon Lambda Golang Library (*L2 construct in experimental phase at the time of writing*)
-  - Go function structure - https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdklambdagoalpha/v2#readme-go-function
+  - [Go function structure](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdklambdagoalpha/v2#readme-go-function)
   - [Bundle your Go function using go tooling](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdklambdagoalpha/v2#readme-local-bundling)
   - [Use Docker to bundle your Go function code](https://pkg.go.dev/github.com/aws/aws-cdk-go/awscdklambdagoalpha/v2#readme-docker)
